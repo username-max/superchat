@@ -1,0 +1,19 @@
+server:
+  port: 14228
+spring:
+  application:
+    name: superchat
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    jdbcUrl: jdbc:postgresql://localhost:5432/${DB_NAME:postgres}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:password}
+  liquibase:
+    enabled: false
+    change-log: classpath:db/changelog/Changelog.xml
+  jpa:
+    hibernate:
+      ddl-auto: none
+  cloud:
+    config:
+      enabled: false
